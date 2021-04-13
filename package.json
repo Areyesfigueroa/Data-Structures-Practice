@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "concurrently \"nodemon ./DataStructures/Queue/Queue.js\" \"tsc --target ES2015 ./DataStructures/Queue/Queue.ts --watch\""
   },
   "name": "data-structures-practice",
   "description": "Practice Interview Coding Challenges",
