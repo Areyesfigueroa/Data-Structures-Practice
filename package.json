@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "data-structures-practice",
+  "description": "Practice Interview Coding Challenges",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Areyesfigueroa/Data-Structures-Practice.git"
+  },
+  "author": "Aliel Reyes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Areyesfigueroa/Data-Structures-Practice/issues"
+  },
+  "homepage": "https://github.com/Areyesfigueroa/Data-Structures-Practice#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
