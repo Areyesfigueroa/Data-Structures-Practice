@@ -1,6 +1,6 @@
 export{}
 
-class Queue<Type> {
+export class Queue<Type> {
     #elements:Type[] = [];
     
     //Add element from the back
@@ -9,7 +9,7 @@ class Queue<Type> {
     }
 
     //Remove element from the front
-    dequeue: () => Type = () => {
+    dequeue: () => Type | undefined = () => {
         return this.#elements.shift();
     } 
 
@@ -26,19 +26,19 @@ class Queue<Type> {
     }
 }
 
-let q = new Queue<number>();
+// let q = new Queue<number>();
 
-for(let i:number = 1; i <= 7; i++) {
-    q.enqueue(i);
-}
+// for(let i:number = 1; i <= 7; i++) {
+//     q.enqueue(i);
+// }
 
-console.log(q.peek());
-console.log(q.length());
+// console.log(q.peek());
+// console.log(q.length());
 
-//dequeue all elements
+// //dequeue all elements
 
-while(!q.isEmpty()) {
-    console.log(q.dequeue());
-}
-console.log(q.length());
+// while(!q.isEmpty()) {
+//     console.log(q.dequeue());
+// }
+// console.log(q.length());
 

@@ -4,10 +4,21 @@ export{};
  * Queues: https://www.javascripttutorial.net/javascript-queue/
  * BinaryTreeInsertion LevelOrder: https://www.geeksforgeeks.org/insertion-in-a-binary-tree-in-level-order/
  */
+
+// const { Queue } = require('../Queue/Queue');
+
+// let q = new Queue();
+
+// for(let i:number = 1; i <= 7; i++) {
+//     q.enqueue(i);
+// }
+
+// console.log(q.peek());
+// console.log(q.length());
 class Node {
     key: number;
-    left: Node;
-    right: Node;
+    left: Node | null;
+    right: Node | null;
 
     constructor(item: number) {
         this.key = item;
@@ -20,7 +31,7 @@ class BinaryTree {
     root:Node | null = null;
     log:string = '';
 
-    constructor(key:number = null) {
+    constructor(key:number | null = null) {
         this.root = key ? new Node(key):null;
     }
 
@@ -29,7 +40,7 @@ class BinaryTree {
         this.insertUtil(this.root, key)
     }
 
-    insertUtil = (temp:Node, key:number) => {
+    insertUtil = (temp:Node | null, key:number) => {
         //Base case
         if(temp === null) {
             this.root = new Node(key);
@@ -41,7 +52,7 @@ class BinaryTree {
         // queue.
     }
 
-    print2DUtil = (root:Node, space:number) => {
+    print2DUtil = (root:Node | null, space:number) => {
         // Base Case
         if(root === null) return;
 
