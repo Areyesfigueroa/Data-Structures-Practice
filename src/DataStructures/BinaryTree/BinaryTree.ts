@@ -4,18 +4,7 @@ export{};
  * Queues: https://www.javascripttutorial.net/javascript-queue/
  * BinaryTreeInsertion LevelOrder: https://www.geeksforgeeks.org/insertion-in-a-binary-tree-in-level-order/
  */
-
-// const { Queue } = require('../Queue/Queue');
-
-// let q = new Queue();
-
-// for(let i:number = 1; i <= 7; i++) {
-//     q.enqueue(i);
-// }
-
-// console.log(q.peek());
-// console.log(q.length());
-class Node {
+export class Node {
     key: number;
     left: Node | null;
     right: Node | null;
@@ -27,7 +16,7 @@ class Node {
 }
 
 const COUNT:number = 8;
-class BinaryTree {
+export class BinaryTree {
     root:Node | null = null;
     log:string = '';
 
@@ -46,11 +35,38 @@ class BinaryTree {
             this.root = new Node(key);
             return;
         }
-
-        //Create a queue to use here: 
-        // const queue:Array<Node> = [];
-        // queue.
     }
+
+    preOrderTraversal = (node:Node|null) => {
+        
+        //Base case
+        if(node === null) {
+            return;
+        }
+
+        console.log(node.key);
+
+        this.preOrderTraversal(node.left);
+        this.preOrderTraversal(node.right);
+    }
+
+    inOrderTraveral = (node:Node|null) => {
+        //Base case
+        if(node === null) return;
+
+        this.inOrderTraveral(node.left);
+        console.log(node.key);
+        this.inOrderTraveral(node.right);
+    }
+
+    postOrderTraversal = (node:Node|null) => {
+        if(node === null) return;
+
+        this.postOrderTraversal(node.left);
+        this.postOrderTraversal(node.right);
+        console.log(node.key);
+    }
+
 
     print2DUtil = (root:Node | null, space:number) => {
         // Base Case
@@ -78,31 +94,7 @@ class BinaryTree {
     }
 }
 
-//Leveled Binary Tree
-const tree:BinaryTree = new BinaryTree();
 
-// Create the root
-tree.root = new Node(1); 
-
-tree.insert(2);
-// tree.root.left = new Node(2); 
-// tree.root.right = new Node(3); 
-
-// tree.root.left.left = new Node(4); 
-// tree.root.left.right = new Node(5); 
-// tree.root.right.left = new Node(6); 
-// tree.root.right.right = new Node(7); 
-
-// tree.root.left.left.left = new Node(8); 
-// tree.root.left.left.right = new Node(9); 
-// tree.root.left.right.left = new Node(10); 
-// tree.root.left.right.right = new Node(11); 
-// tree.root.right.left.left = new Node(12); 
-// tree.root.right.left.right = new Node(13); 
-// tree.root.right.right.left = new Node(14); 
-// tree.root.right.right.right = new Node(15); 
-
-tree.print2D();
 
 //      1
 //    /   \

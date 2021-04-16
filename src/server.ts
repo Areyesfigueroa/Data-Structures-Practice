@@ -1,12 +1,25 @@
-import { Queue } from './DataStructures/Queue/Queue';
+import {
+  BinarySearchTree,
+  Node,
+} from "./DataStructures/BinarySearchTree/BinarySearchTree";
 
-const q = new Queue<number>();
+const bst: BinarySearchTree = new BinarySearchTree();
 
-for(let i:number = 1; i <= 7; i++) {
-    q.enqueue(i);
-}
+bst.addNode(50, "root");
 
-console.log(q.peek());
-console.log(q.length());
+bst.addNode(25, "left, Level 1");
+bst.addNode(75, "Right, Level 1");
 
-console.log("Hello World 2");
+bst.addNode(15, "Left-Left, Level 2");
+bst.addNode(30, "Left-Right, Level 2");
+bst.addNode(85, "Right-Right, Level 2");
+
+// console.log("In Order Traveral");
+// bst.inOrderTraveral(bst.root);
+// console.log("\nPre Order Traveral");
+// bst.preOrderTraveral(bst.root);
+// console.log("\nPost Order Traversal");
+// bst.postOrderTraveral(bst.root);
+
+// const node: Node | null = bst.findNode(75);
+// console.log(node?.key);
